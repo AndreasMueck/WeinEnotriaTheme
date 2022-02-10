@@ -1,0 +1,218 @@
+{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+
+{% block base_header %}
+    {% sw_include '@Storefront/storefront/layout/header/header-minimal.html.twig' %}
+{% endblock %}
+
+{% block base_navigation %}{% endblock %}
+
+{% block page_checkout_main_content %}
+    {% block page_checkout_address %}
+        {% block page_checkout_address_header %}
+            <h1 class="address-main-header">
+                {{ "checkout.addressHeader"|trans|sw_sanitize }}
+            </h1>
+        {% endblock %}
+
+        {% block test_block %}
+
+        <main class="container" role="main">
+    <div class="row">
+        <div class="col-12">
+            <ul id="tabs" class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a id="tab-A" class="nav-link active" href="#pane-A" role="tab" data-toggle="tab" aria-controls="pane-A" aria-selected="true">Ich bin ein neuer Kunde</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-B" class="nav-link" href="#pane-B" role="tab" data-toggle="tab" aria-controls="pane-B" aria-selected="false">Ich bin Enotria-Kunde</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-C" class="nav-link" href="#pane-C" role="tab" data-toggle="tab" aria-controls="pane-C" aria-selected="false">Mit Paypal anmelden</a>
+                </li>
+            </ul>
+            <div id="tab-content" class="accordion tab-content">
+                <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+                    <div id="heading-A" class="card-header" role="tab">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-A" aria-expanded="true" aria-controls="collapse-A">A</a>
+                        </h2>
+                    </div>
+                    <div id="collapse-A" class="collapse show" data-parent="#tab-content" aria-labelledby="heading-A">
+                        <div class="card-body">
+                            Content of tab/accordion A goes here.
+                        </div>
+                    </div>
+                </div>
+                <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
+                    <div id="heading-B" class="card-header" role="tab">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-B" aria-expanded="true" aria-controls="collapse-B">B</button>
+                        </h2>
+                    </div>
+                    <div id="collapse-B" class="collapse" data-parent="#tab-content" aria-labelledby="heading-B">
+                        <div class="card-body">
+                            Content of tab/accordion B goes here.
+                        </div>
+                    </div>
+                </div>
+                <div id="pane-C" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-C">
+                    <div id="heading-C" class="card-header" role="tab">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-C" aria-expanded="true" aria-controls="collapse-C">C</button>
+                        </h2>
+                    </div>
+                    <div id="collapse-C" class="collapse" data-parent="#tab-content" aria-labelledby="heading-C">
+                        <div class="card-body">
+                            Content of tab/accordion C goes here.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+        {% endblock %}
+
+
+
+        {# TABS TO ACCORDION #}
+        {% block tab_to_accordion %}
+            <div class="container" style="padding-left:0">
+                <ul id="tabs" class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Ich bin ein neuer
+                            Kunde</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Ich bin Enotria-Kunde</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">Mit Paypal anmelden</a>
+                    </li>
+                </ul>
+
+                <div id="content" class="tab-content" role="tablist">
+                    <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+                        <div class="card-header" role="tab" id="heading-A">
+                            <h5 class="mb-0">
+                                <!-- Note: `data-parent` removed from here -->
+                                <a data-toggle="collapse" href="#collapse-A" aria-expanded="true" aria-controls="collapse-A">
+                                    Ich bin ein neuer Kunde
+                                </a>
+                            </h5>
+                        </div>
+                        <!-- Note: New place of `data-parent` -->
+                        <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel"
+                            aria-labelledby="heading-A">
+                            <div class="card-body">
+                                {% block page_checkout_address_register %}
+                                {% block page_checkout_address_register_card %}
+                                {% sw_include '@Storefront/storefront/page/checkout/address/register.html.twig' with {
+                                                'cardTitle': "checkout.addressRegisterCardTitle"|trans|sw_sanitize} %}
+                                {% endblock %}
+                                {% endblock %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
+                        <div class="card-header" role="tab" id="heading-B">
+                            <h5 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="false"
+                                    aria-controls="collapse-B">
+                                    Ich bin Enotria-Kunde
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-B" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-B">
+                            <div class="card-body">
+                                {% block page_checkout_address_login %}
+                                <div>
+                                    {% block page_checkout_address_login_card %}
+                                    {% sw_include '@Storefront/storefront/component/account/login.html.twig' %}
+                                    {% endblock %}
+                                </div>
+                                {% endblock %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="pane-C" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-C">
+                        <div class="card-header" role="tab" id="heading-C">
+                            <h5 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapse-C" aria-expanded="false"
+                                    aria-controls="collapse-C">
+                                    Mit Paypal anmelden
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-C" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-C">
+                            <div class="card-body">
+                                {# PAYPAL ANFANG #}
+                                {# Dieser Block wurde aus dem Paypal-Plugin herauskopiert! #}
+                                {% block page_checkout_paypal %}
+                                {# @var \Swag\PayPal\Checkout\ExpressCheckout\ExpressCheckoutButtonData expressSettings #}
+                                {% set expressSettings = page.extensions[constant('Swag\\PayPal\\Checkout\\ExpressCheckout\\ExpressCheckoutSubscriber::PAYPAL_EXPRESS_CHECKOUT_BUTTON_DATA_EXTENSION_ID')] %}
+                                {% set expressEnabled = expressSettings.loginEnabled %}
+
+                                {# @var \Swag\PayPal\Installment\Banner\BannerData installmentBanner #}
+                                {% set installmentBanner = page.extensions[constant('Swag\\PayPal\\Installment\\Banner\\InstallmentBannerSubscriber::PAYPAL_INSTALLMENT_BANNER_DATA_EXTENSION_ID')] %}
+                                {% set installmentBannerEnabled = installmentBanner is not null %}
+
+                                {% if expressEnabled or installmentBannerEnabled %}
+                                <div class="row mb-2">
+                                    {% if expressEnabled %}
+                                    {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' with {button_class: 'col-5'} %}
+                                    {% endif %}
+
+                                    {% if installmentBannerEnabled %}
+                                    <div class="col-5 mt-2" data-swag-paypal-installment-banner="true"
+                                        data-swag-pay-pal-installment-banner-options="{{ installmentBanner|json_encode }}">
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                                {% endblock %}
+                                {# PAYPAL ENDE #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        {# TABS TO ACCORDION #}
+
+      
+    {% endblock %}
+{% endblock %}
+
+{% block page_checkout_aside_summary %}
+    {{ parent() }}
+
+    {% block page_checkout_address_products %}
+        <div class="checkout-aside-products">
+            {% block page_checkout_address_products_header %}
+                <h2 class="checkout-aside-product-header">
+                    {{ "checkout.cartHeader"|trans|sw_sanitize }}
+                </h2>
+            {% endblock %}
+
+            {% block page_checkout_address_products_list %}
+                <div class="checkout-aside-product-list">
+                    {% block page_checkout_address_product_list_container %}
+                        {% for lineItem in page.cart.lineItems %}
+                            {% block page_checkout_address_product_summary_item %}
+                                {% sw_include '@Storefront/storefront/page/checkout/checkout-aside-item.html.twig' %}
+                            {% endblock %}
+                        {% endfor %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}
+
+{% block base_footer %}
+    {% sw_include '@Storefront/storefront/layout/footer/footer-minimal.html.twig' %}
+{% endblock %}

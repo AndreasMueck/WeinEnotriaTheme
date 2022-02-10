@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Nav Tabs to Accordion Snippet">
+    <meta name="author" content="Filkris">
+    <title>Bootstrap 4 Responsive Nav Tabs to Accordion Snippet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Snippet start -->
+    <style>
+        .nav-tabs {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-tabs {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                border: none;
+            }
+
+            .card .card-header {
+                display: none;
+            }
+
+            .card .collapse {
+                display: block;
+            }
+        }
+
+        .tab-content > .tab-pane {
+            opacity: 1;
+            display: block;
+        }
+        
+        @media (min-width: 768px) {
+            .tab-content > .tab-pane {
+                display: none;
+            }
+        }
+
+        .tab-content > .tab-pane.active {
+            display: block;
+        }
+    </style>
+    <!-- End of snippet-->
+</head>
+<body>
+<main class="container" role="main">
+    <div class="row">
+        <div class="col-12">
+            <h1>Bootstrap 4.4.1</h1>
+            <h2 class="mb-5">Responsive Nav Tabs to Accordion Snippet</h2>
+            <!-- Snippet start -->
+            <ul id="tabs" class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a id="tab-A" class="nav-link active" href="#pane-A" role="tab" data-toggle="tab" aria-controls="pane-A" aria-selected="true">A</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-B" class="nav-link" href="#pane-B" role="tab" data-toggle="tab" aria-controls="pane-B" aria-selected="false">B</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-C" class="nav-link" href="#pane-C" role="tab" data-toggle="tab" aria-controls="pane-C" aria-selected="false">C</a>
+                </li>
+            </ul>
+            <div id="tab-content" class="accordion tab-content">
+                <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+                    <div id="heading-A" class="card-header" role="tab">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-A" aria-expanded="true" aria-controls="collapse-A">A</a>
+                        </h2>
+                    </div>
+                    <div id="collapse-A" class="collapse show" data-parent="#tab-content" aria-labelledby="heading-A">
+                        <div class="card-body">
+                            Content of tab/accordion A goes here.
+                        </div>
+                    </div>
+                </div>
+                <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
+                    <div id="heading-B" class="card-header" role="tab">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-B" aria-expanded="true" aria-controls="collapse-B">B</button>
+                        </h2>
+                    </div>
+                    <div id="collapse-B" class="collapse" data-parent="#tab-content" aria-labelledby="heading-B">
+                        <div class="card-body">
+                            Content of tab/accordion B goes here.
+                        </div>
+                    </div>
+                </div>
+                <div id="pane-C" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-C">
+                    <div id="heading-C" class="card-header" role="tab">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-C" aria-expanded="true" aria-controls="collapse-C">C</button>
+                        </h2>
+                    </div>
+                    <div id="collapse-C" class="collapse" data-parent="#tab-content" aria-labelledby="heading-C">
+                        <div class="card-body">
+                            Content of tab/accordion C goes here.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of snippet-->
+            <h2>Documentation</h2>
+            <ul class="list-style-none">
+                <li>
+                    <a href="https://getbootstrap.com/docs/4.4/components/navs/#tabs" target="_blank">Nav Tabs</a>
+                </li>
+                <li>
+                    <a href="https://getbootstrap.com/docs/4.4/components/collapse/#accordion-example" target="_blank">Accordion Example</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

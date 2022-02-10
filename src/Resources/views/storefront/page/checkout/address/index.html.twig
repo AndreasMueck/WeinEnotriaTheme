@@ -1,0 +1,116 @@
+{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+
+{% block base_header %}
+    {% sw_include '@Storefront/storefront/layout/header/header-minimal.html.twig' %}
+{% endblock %}
+
+{% block base_navigation %}{% endblock %}
+
+{% block page_checkout_main_content %}
+    {% block page_checkout_address %}
+        {% block page_checkout_address_header %}
+            <h1 class="address-main-header">
+                {{ "checkout.addressHeader"|trans|sw_sanitize }}
+            </h1>
+        {% endblock %}
+
+        {# +AM Entfernt aus Original: page_checkout_address_login_toggle #}
+
+        {# +AM Neu: page_checkout_adress_login_options #}
+        {% block page_checkout_adress_login_options %}
+            <main class="container container-no-padding" role="main">
+                <div class="row">
+                    <div class="col">
+                        <ul class="nav nav-tabs nav-justified mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Neuer Kunde</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Enotria Kunde</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Paypal anmelden</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                {# +AM ORGINAL-BLOCK #}
+                                {% block page_checkout_address_register %}
+                                    {% block page_checkout_address_register_card %}
+                                    {% sw_include '@Storefront/storefront/page/checkout/address/register.html.twig' with {
+                                                    'cardTitle': "checkout.addressRegisterCardTitle"|trans|sw_sanitize} %}
+                                    {% endblock %}
+                                {% endblock %}
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                {# +AM ORGINAL-BLOCK #}
+                                {% block page_checkout_address_login %}
+                                    {% block page_checkout_address_login_card %}
+                                        {% sw_include '@Storefront/storefront/component/account/login.html.twig' %}
+                                    {% endblock %}
+                                {% endblock %}
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                {# PAYPAL ANFANG #}
+                                {# Dieser Block wurde aus dem Paypal-Plugin herauskopiert! #}
+                                {% block page_checkout_paypal %}
+                                {# @var \Swag\PayPal\Checkout\ExpressCheckout\ExpressCheckoutButtonData expressSettings #}
+                                {% set expressSettings = page.extensions[constant('Swag\\PayPal\\Checkout\\ExpressCheckout\\ExpressCheckoutSubscriber::PAYPAL_EXPRESS_CHECKOUT_BUTTON_DATA_EXTENSION_ID')] %}
+                                {% set expressEnabled = expressSettings.loginEnabled %}
+                                {# @var \Swag\PayPal\Installment\Banner\BannerData installmentBanner #}
+                                {% set installmentBanner = page.extensions[constant('Swag\\PayPal\\Installment\\Banner\\InstallmentBannerSubscriber::PAYPAL_INSTALLMENT_BANNER_DATA_EXTENSION_ID')] %}
+                                {% set installmentBannerEnabled = installmentBanner is not null %}
+                                {% if expressEnabled or installmentBannerEnabled %}
+                                <div class="row mb-2">
+                                    {% if expressEnabled %}
+                                    {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' with {button_class: 'col-5'} %}
+                                    {% endif %}
+
+                                    {% if installmentBannerEnabled %}
+                                    <div class="col-5 mt-2" data-swag-paypal-installment-banner="true"
+                                        data-swag-pay-pal-installment-banner-options="{{ installmentBanner|json_encode }}">
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                                {% endblock %}
+                                {# PAYPAL ENDE #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        {% endblock %}
+        {# +AM Ende: page_checkout_adress_login_options #}
+    {% endblock %}
+{% endblock %}
+
+{% block page_checkout_aside_summary %}
+    {{ parent() }}
+
+    {% block page_checkout_address_products %}
+        <div class="checkout-aside-products">
+            {% block page_checkout_address_products_header %}
+                <h2 class="checkout-aside-product-header">
+                    {{ "checkout.cartHeader"|trans|sw_sanitize }}
+                </h2>
+            {% endblock %}
+
+            {% block page_checkout_address_products_list %}
+                <div class="checkout-aside-product-list">
+                    {% block page_checkout_address_product_list_container %}
+                        {% for lineItem in page.cart.lineItems %}
+                            {% block page_checkout_address_product_summary_item %}
+                                {% sw_include '@Storefront/storefront/page/checkout/checkout-aside-item.html.twig' %}
+                            {% endblock %}
+                        {% endfor %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}
+
+{% block base_footer %}
+    {% sw_include '@Storefront/storefront/layout/footer/footer-minimal.html.twig' %}
+{% endblock %}

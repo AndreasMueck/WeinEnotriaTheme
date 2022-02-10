@@ -1,0 +1,26 @@
+{
+  "name": "swag/theme-skeleton",
+  "description": "Theme skeleton plugin",
+  "type": "shopware-platform-plugin",
+  "authors": [
+    {
+        "name": "WAK Full-Service-Agentur",
+        "email": "info@wak-online.de",
+        "homepage": "https://wak-online.de",
+        "role": "Developer"
+    }
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "WeinEnotriaTheme\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "WeinEnotriaTheme\\WeinEnotriaTheme",
+    "label": {
+      "de-DE": "Enotria Shop-Template",
+      "en-GB": "Enotria shop theme"
+    }
+  }
+}
