@@ -20,7 +20,7 @@
     padding-right: 0;
 }
 
-/* +AM Weiter-Button */
+/* +AM Weiter-Button im Checkout -> von rechts nach links */
 .register-submit {
     float:left;
 }
@@ -36,7 +36,12 @@
     }
 }
 
-/* +AM nav-tabs sind nicht gleich hoch, wenn der Nav-Text nicht die gleichen Zeilenanzahl hat. Hiermit sind die Tabs gleich hoch */
+/* +AM nav-tabs sind nicht gleich hoch, wenn der Nav-Text nicht die gleiche Zeilenanzahl hat. Hiermit sind die Tabs gleich hoch */
 .nav-tabs .nav-link {
     height: 100%;
+}
+
+/* +AM navigation mit hintergrund-farbe */
+.nav-main {
+    background-color:rgba(170,0,0,0.3);
 }
