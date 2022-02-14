@@ -41,7 +41,19 @@
     height: 100%;
 }
 
+//#eeeeee
+$headerBackgroundColor: rgba(238,238,238,1.0);
+
 /* +AM navigation mit hintergrund-farbe */
 .nav-main {
-    background-color:rgba(170,0,0,0.3);
+    //background-color:rgba(170,0,0,0.3);
+    background-color: $headerBackgroundColor; 
+}
+
+.navigation-flyout-content {
+    padding-bottom: 0;
+}
+
+.header-background-color {
+    background-color: $headerBackgroundColor; 
 }
