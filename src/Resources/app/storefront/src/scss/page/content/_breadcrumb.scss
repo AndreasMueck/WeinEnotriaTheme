@@ -2,3 +2,13 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+
+.nav {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+nav li a {
+    white-space: nowrap;
+}
