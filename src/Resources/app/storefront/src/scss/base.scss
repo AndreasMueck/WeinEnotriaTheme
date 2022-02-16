@@ -1,10 +1,9 @@
 /*
- * Überschreibungen des Standard-CSS
- *---------------------------------------*/
+ * Überschreibungen des Standard-Shopware-CSS
+ *----------------------------------------------*/
 @import 'layout/navigation-flyout';
-
-
+@import 'layout/header';
  /*
- * Überschreibungen - Eigenes CSS - noch den richtigen SCSS-Dateien zuordnen
- *---------------------------------------*/
+ * Eigenes CSS - noch den richtigen SCSS-Dateien zuordnen
+ *----------------------------------------------------------*/
 @import 'wein-enotria-shop-layout';

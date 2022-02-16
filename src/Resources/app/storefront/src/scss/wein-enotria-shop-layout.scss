@@ -41,21 +41,14 @@
     height: 100%;
 }
 
-/* +AM Abstand verringern */
-.navigation-flyout-content {
-    padding-bottom: 0;
-}
-
-//#eeeeee
-$headerBackgroundColor: rgba(238,238,238,1.0);
-
 /* +AM navigation mit hintergrund-farbe */
 .nav-main {
-    background-color: $headerBackgroundColor; 
+    box-shadow: 0 10px 10px -5px rgba($black, 0.1); 
 }
 
-@media (max-width: 991px) {
-    .header-background-color {
-        background-color: $headerBackgroundColor; 
-    }
+
+/* +AM LOGO */
+.header-logo-main-img {
+    width: 100%;
+    height: auto;
 }
