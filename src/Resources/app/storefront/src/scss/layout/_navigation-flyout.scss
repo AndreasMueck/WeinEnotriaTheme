@@ -13,6 +13,7 @@ Custom styling for navigation flyout which opens on hover over the main navigati
 
 .navigation-flyout {
     width: 100%;
+    /* +AM Schatten unter flyout */
     box-shadow: 0 10px 10px -5px rgba($black, 0.1);
     background-color: $white;
     pointer-events: none;

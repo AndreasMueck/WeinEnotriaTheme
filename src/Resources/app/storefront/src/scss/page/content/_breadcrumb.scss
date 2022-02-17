@@ -2,3 +2,19 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+/*.breadcrumb li:first-child::before {
+    content: "X";
+}*/
+
+
+/* +AM Breadcrumbs wird scrollbar gemacht, falls zu lang für die Bildschirm-Breite */
+.breadcrumb {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.breadcrumb-title {
+    white-space: nowrap;
+}
