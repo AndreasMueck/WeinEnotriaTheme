@@ -84,8 +84,8 @@ The header contains the shop logo, the search form and various actions like the 
     }
 }
 
-/* +AM Schatten bei < 992px */
-@include media-breakpoint-down(lg) {
+/* +AM Schatten bei < 576px */
+@include media-breakpoint-down(md) {
     .header-main {
         box-shadow: 0 10px 10px -5px rgba($black, 0.1); 
     }
