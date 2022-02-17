@@ -1,6 +1,9 @@
 /*
  * Überschreibungen des Standard-Shopware-CSS
  *----------------------------------------------*/
+
+@import "fonts/open-sans";
+
 @import 'layout/navigation-flyout';
 @import 'layout/header';
 @import 'layout/nav-main';
