@@ -92,7 +92,7 @@
           "de-DE": "Rahmen"
         },
         "type": "color",
-        "value": "#bcc1c7",
+        "value": "#e5e5e5",
         "editable": true,
         "block": "themeColors",
         "order": 300
