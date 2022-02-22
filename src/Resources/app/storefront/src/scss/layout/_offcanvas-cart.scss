@@ -36,8 +36,10 @@ Extends the basic offcanvas component with additional cart styles.
         }
     }
 
+    /* +AM Bildhöhe 100 Prozent */
     .cart-item-img {
-        height: 75px;
+        /* height: 75px; */
+        height: 100%;
         width: 75px;
     }
 
