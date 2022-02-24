@@ -18,7 +18,9 @@
   ],
   "script": [
     "@Storefront",
-    "app/storefront/dist/storefront/js/wein-enotria-theme.js"
+    "app/storefront/dist/storefront/js/wein-enotria-theme.js",
+    "app/storefront/dist/storefront/js/bootstrap-input-spinner.js",
+    "app/storefront/dist/storefront/js/custom-editors.js"
   ],
   "asset": [
     "@Storefront",
