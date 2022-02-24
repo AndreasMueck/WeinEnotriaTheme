@@ -22,7 +22,23 @@
                     {% block page_product_detail_buy_quantity_container %}
                         <div class="col-4">
                             {% block page_product_detail_buy_quantity %}
-                                <input name="lineItems[{{ product.id }}][quantity]" type="number" value="1" min="1" max="{{product.calculatedMaxPurchase}}" step="1"/>
+                                <select name="lineItems[{{ product.id }}][quantity]"
+                                        class="custom-select product-detail-quantity-select">
+                                    {% for quantity in range(product.minPurchase, product.calculatedMaxPurchase, product.purchaseSteps) %}
+                                        <option value="{{ quantity }}">
+                                            {{ quantity }}
+                                            {% if quantity == 1 %}
+                                                {% if product.translated.packUnit %} {{ product.translated.packUnit }}{% endif %}
+                                            {% else %}
+                                                {% if product.translated.packUnitPlural %}
+                                                    {{ product.translated.packUnitPlural }}
+                                                {% elseif product.translated.packUnit %}
+                                                    {{ product.translated.packUnit }}
+                                                {% endif %}
+                                            {% endif %}
+                                        </option>
+                                    {% endfor %}
+                                </select>
                             {% endblock %}
                         </div>
                     {% endblock %}

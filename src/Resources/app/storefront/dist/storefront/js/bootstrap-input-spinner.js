@@ -7,6 +7,8 @@
 ;(function ($) {
     "use strict"
 
+    var XYZXZYXYZ = false
+
     // the default editor for parsing and rendering
     var I18nEditor = function (props, element) {
         var locale = props.locale || "en-US"
