@@ -7,8 +7,6 @@
 ;(function ($) {
     "use strict"
 
-    var XYZXZYXYZ = false
-
     // the default editor for parsing and rendering
     var I18nEditor = function (props, element) {
         var locale = props.locale || "en-US"
@@ -66,9 +64,10 @@
             decrementButton: "<strong>&minus;</strong>", // button text
             incrementButton: "<strong>&plus;</strong>", // ..
             groupClass: "", // css class of the resulting input-group
-            buttonsClass: "btn-outline-secondary",
+            buttonsClass: "btn-outline-primary",
             buttonsWidth: "2.5rem",
             textAlign: "center", // alignment of the entered number
+            fontWeight: "bold",
             autoDelay: 500, // ms threshold before auto value change
             autoInterval: 50, // speed of auto value change, set to `undefined` to disable auto-change
             buttonsOnly: false, // set this `true` to disable the possibility to enter or paste the number via keyboard
@@ -78,7 +77,7 @@
             template: // the template of the input
                 '<div class="input-group ${groupClass}">' +
                 '<button style="min-width: ${buttonsWidth}" class="btn btn-decrement ${buttonsClass} btn-minus" type="button">${decrementButton}</button>' +
-                '<input type="text" inputmode="decimal" style="text-align: ${textAlign}" class="form-control form-control-text-input"/>' +
+                '<input type="text" inputmode="decimal" style="text-align: ${textAlign}; font-weight: ${fontWeight}" class="form-control form-control-text-input inputSpinner" maxlength="2" pattern="[0-9]+" title="Nur Ziffern erlaubt!" required/>' +
                 '<button style="min-width: ${buttonsWidth}" class="btn btn-increment ${buttonsClass} btn-plus" type="button">${incrementButton}</button>' +
                 '</div>'
         }
