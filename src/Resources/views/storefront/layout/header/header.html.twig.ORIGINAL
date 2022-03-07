@@ -11,9 +11,9 @@
 				</div>
 			{% endblock %}
 
-{% block layout_header_search %}
+			{% block layout_header_search %}
                 {# +AM CSS-Klasse header-background-color added, für breakpoints < 992px #}
-				<div class="col-12 order-2 col-sm order-sm-1 header-search-col">
+				<div class="col-12 order-2 col-sm order-sm-1 header-search-col header-background-color"">
 					<div class="row">
 						<div class="col-sm-auto d-none d-sm-block d-lg-none">
 							{% block layout_header_navigation_toggle_tablet %}
@@ -37,7 +37,7 @@
 
 			{% block layout_header_actions %}
                 {# +AM CSS-Klasse header-background-color added, für breakpoints < 992px #}
-				<div class="col-12 order-1 col-sm-auto order-sm-2 header-actions-col">
+				<div class="col-12 order-1 col-sm-auto order-sm-2 header-actions-col header-background-color">
 					<div class="row no-gutters">
 						{% block layout_header_navigation_toggle %}
 							<div class="col d-sm-none">

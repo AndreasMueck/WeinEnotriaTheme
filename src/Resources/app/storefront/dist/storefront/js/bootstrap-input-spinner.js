@@ -94,6 +94,7 @@
             .replace(/\${decrementButton}/g, props.decrementButton)
             .replace(/\${incrementButton}/g, props.incrementButton)
             .replace(/\${textAlign}/g, props.textAlign)
+            .replace(/\${fontWeight}/g, props.fontWeight)
 
         this.each(function () {
 
