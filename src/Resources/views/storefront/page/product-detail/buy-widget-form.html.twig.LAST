@@ -22,7 +22,7 @@
                     {% block page_product_detail_buy_quantity_container %}
                         <div class="col-5">
                             {% block page_product_detail_buy_quantity %}
-                                <input name="lineItems[{{ product.id }}][quantity]" class="inputSpinner" type="number" value="{{product.minPurchase}}" min="{{product.minPurchase}}" max="{{product.maxPurchase}}" step="{{product.purchaseSteps}}"/>
+                                <input name="lineItems[{{ product.id }}][quantity]" class="inputSpinner" type="number" value="{{product.minPurchase}}" min="{{product.minPurchase}}" max="{{product.calculatedMaxPurchase}}" step="{{product.purchaseSteps}}"/>
                             {% endblock %}
                         </div>
                     {% endblock %}
