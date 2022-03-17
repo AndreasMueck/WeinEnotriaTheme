@@ -1,12 +1,10 @@
-/* +AM Hover-Effekt auch auf Filter-Buttons */
-
 .custom-filter {
     cursor: pointer;
 
     &:invalid {
         color: $input-placeholder-color;
     }
-
+    /* +AM Hover-Effekt auch auf Filter-Buttons */
     &:hover {
         border-color: $primary;
         color: $primary;

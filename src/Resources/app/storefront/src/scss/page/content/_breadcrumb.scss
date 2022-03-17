@@ -9,7 +9,7 @@
 
 /* +AM Breadcrumbs wird scrollbar gemacht, falls zu lang für die Bildschirm-Breite, bei < 576px */
 @include media-breakpoint-down(md) {
-    .breadcrumb {
+    /*.breadcrumb {
         flex-wrap: nowrap;
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
@@ -17,6 +17,6 @@
     
     .breadcrumb-title {
         white-space: nowrap;
-    }
+    }*/
 }
 
