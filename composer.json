@@ -2,6 +2,7 @@
   "name": "wak/wein-enotria-theme",
   "description": "Wein Enotria Theme",
   "type": "shopware-platform-plugin",
+  "version": "1.0.0",
   "authors": [
     {
         "name": "WAK Full-Service-Agentur",
